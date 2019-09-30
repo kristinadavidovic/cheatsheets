@@ -4,4 +4,4 @@
 
 ## CSS GRID
 
-<https://github.com/kristinadavidovic/cheatsheets/css-grid>
+<https://github.com/kristinadavidovic/cheatsheets/tree/master/css-grid>
