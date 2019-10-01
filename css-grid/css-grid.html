@@ -9,16 +9,25 @@
       href="https://fonts.googleapis.com/css?family=Big+Shoulders+Display:400,600|Share+Tech+Mono|Turret+Road:400,800&display=swap"
       rel="stylesheet"
     />
+    <script
+      src="https://kit.fontawesome.com/d35379714b.js"
+      crossorigin="anonymous"
+    ></script>
     <title>CSS Grid | CSS grid cheatsheet</title>
   </head>
   <body>
     <main>
       <section class="header">
-        <div class="container">
+        <div class="container header">
           <h1>CSS grid cheatsheet</h1>
           <nav>
             <ul class="menu-main">
-              <li class="menu-main__item">About</li>
+              <li class="menu-main__item">
+                <a href="../index.php">
+                  <i class="fas fa-angle-left"></i>
+                  Back
+                </a>
+              </li>
               <li class="menu-main__item">About</li>
               <li class="menu-main__item">About</li>
             </ul>
@@ -27,28 +36,23 @@
       </section>
       <section class="grid-container">
         <h2>Grid container</h2>
+        <!-- Property DISPLAY -->
         <div class="property">
           <div class="property__name">display</div>
           <div class="property__values">
             <div class="value">grid</div>
             <div class="value">inline-grid</div>
           </div>
-          <div class="property__code">
-            <pre rel="css">
-                <code>
-.grid {
-  display: grid;
-}
-                </code>
-              </pre>
-          </div>
           <div class="property__example">
+            <div class="property__code">
+              display: grid;
+            </div>
             <div class="wrapper">
               <div class="grid display">
-                <div class="grid-item">Item 1</div>
-                <div class="grid-item">Item 2</div>
-                <div class="grid-item">Item 3</div>
-                <div class="grid-item">Item 4</div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
               </div>
             </div>
           </div>
@@ -60,23 +64,17 @@
             <div class="value">&lt;track-size&gt;</div>
             <div class="value">&lt;line-name&gt;</div>
           </div>
-          <div class="property__code">
-            <pre rel="css">
-                  <code>
-.grid-template-columns-rows {
-  grid-template-columns: 40% 1fr;
-  grid-template-rows: repeat(2, 1fr);
-}
-                  </code>
-                </pre>
-          </div>
           <div class="property__example">
+            <div class="property__code">
+              grid-template-columns: 40% 1fr; <br />
+              grid-template-rows: repeat(2, 1fr);
+            </div>
             <div class="wrapper">
               <div class="grid grid-template-columns-rows">
-                <div class="grid-item">Item 1</div>
-                <div class="grid-item">Item 2</div>
-                <div class="grid-item">Item 3</div>
-                <div class="grid-item">Item 4</div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
               </div>
             </div>
           </div>
@@ -89,31 +87,28 @@
             <div class="value">.</div>
             <div class="value">none</div>
           </div>
-          <div class="property__code">
-            <pre rel="css">
-            <code>
-.grid-template-areas {
-  grid-template-columns: repeat(2, 1fr) 0.5fr;
-  grid-template-rows: auto;
-  grid-template-areas:
-    'header header header'
-    'body body sidebar'
-    'footer footer footer';
-}
-
-.grid-item {
-  grid-area: header;
-}
-            </code>
-          </pre>
-          </div>
           <div class="property__example">
+            <div class="property__code">
+              grid-template-areas: <br />
+              'header header header'<br />
+              'body body sidebar'<br />
+              'footer footer footer'; <br /><br />
+              grid-area: header;
+            </div>
             <div class="wrapper">
               <div class="grid grid-template-areas">
-                <div class="grid-item header">Header</div>
-                <div class="grid-item body">Body</div>
-                <div class="grid-item sidebar">Sidebar</div>
-                <div class="grid-item footer">Footer</div>
+                <div class="grid-item header">
+                  <span>Header</span>
+                </div>
+                <div class="grid-item body">
+                  <span>Body</span>
+                </div>
+                <div class="grid-item sidebar">
+                  <span>Sidebar</span>
+                </div>
+                <div class="grid-item footer">
+                  <span>Footer</span>
+                </div>
               </div>
             </div>
           </div>
@@ -127,49 +122,16 @@
               >&lt;grid-template-rows&gt; / &lt;grid-template-columns&gt;</div
             >
           </div>
-          <div class="property__code">
-            <pre rel="css">
-              <code>
-.grid-template {
-  grid-template: 1fr 2fr / 0.8fr 1.2fr;
-}
-              </code>
-            </pre>
-          </div>
           <div class="property__example">
+            <div class="property__code">
+              grid-template: 1fr 2fr / 0.8fr 1.2fr;
+            </div>
             <div class="wrapper">
               <div class="grid grid-template">
-                <div class="grid-item">Item 1</div>
-                <div class="grid-item">Item 2</div>
-                <div class="grid-item">Item 3</div>
-                <div class="grid-item">Item 4</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Property GRID-COLUMN/ROW-GAP -->
-        <div class="property">
-          <div class="property__name">grid-(column | row)-gap</div>
-          <div class="property__values">
-            <div class="value">&lt;line-size&gt;</div>
-          </div>
-          <div class="property__code">
-            <pre rel="css">
-                <code>
-.grid-column-row-gap {
-  grid-column-gap: 20px;
-  grid-row-gap: 10px;
-}
-                </code>
-              </pre>
-          </div>
-          <div class="property__example">
-            <div class="wrapper">
-              <div class="grid grid-column-row-gap">
-                <div class="grid-item">Item 1</div>
-                <div class="grid-item">Item 2</div>
-                <div class="grid-item">Item 3</div>
-                <div class="grid-item">Item 4</div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
               </div>
             </div>
           </div>
@@ -182,22 +144,16 @@
               >&lt;grid-row-gap&gt; &lt;grid-column-gap&gt;</div
             >
           </div>
-          <div class="property__code">
-            <pre rel="css">
-                  <code>
-.grid-gap {
-  grid-gap: 20px 10px;
-}
-                  </code>
-                </pre>
-          </div>
           <div class="property__example">
+            <div class="property__code">
+              grid-gap: 20px 10px;
+            </div>
             <div class="wrapper">
               <div class="grid grid-gap">
-                <div class="grid-item">Item 1</div>
-                <div class="grid-item">Item 2</div>
-                <div class="grid-item">Item 3</div>
-                <div class="grid-item">Item 4</div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
               </div>
             </div>
           </div>
@@ -211,22 +167,16 @@
             <div class="value">center</div>
             <div class="value">strech</div>
           </div>
-          <div class="property__code">
-            <pre rel="css">
-                    <code>
-.justify-items {
-  justify-items: start;
-}
-              </code>
-            </pre>
-          </div>
           <div class="property__example">
+            <div class="property__code">
+              justify-items: start;
+            </div>
             <div class="wrapper">
               <div class="grid justify-items">
-                <div class="grid-item">Item 1</div>
-                <div class="grid-item">Item 2</div>
-                <div class="grid-item">Item 3</div>
-                <div class="grid-item">Item 4</div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
               </div>
             </div>
           </div>
@@ -240,22 +190,16 @@
             <div class="value">center</div>
             <div class="value">strech</div>
           </div>
-          <div class="property__code">
-            <pre rel="css">
-              <code>
-.align-items {
-  align-items: end;
-}
-              </code>
-            </pre>
-          </div>
           <div class="property__example">
+            <div class="property__code">
+              align-items: end;
+            </div>
             <div class="wrapper">
               <div class="grid align-items">
-                <div class="grid-item">Item 1</div>
-                <div class="grid-item">Item 2</div>
-                <div class="grid-item">Item 3</div>
-                <div class="grid-item">Item 4</div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
               </div>
             </div>
           </div>
@@ -266,22 +210,16 @@
           <div class="property__values">
             <div class="value">&lt;align-items&gt; &lt;justify-items&gt;</div>
           </div>
-          <div class="property__code">
-            <pre rel="css">
-                <code>
-.place-items {
-  place-items: start / end;
-}
-                </code>
-              </pre>
-          </div>
           <div class="property__example">
+            <div class="property__code">
+              place-items: start / end;
+            </div>
             <div class="wrapper">
               <div class="grid place-items">
-                <div class="grid-item">Item 1</div>
-                <div class="grid-item">Item 2</div>
-                <div class="grid-item">Item 3</div>
-                <div class="grid-item">Item 4</div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
               </div>
             </div>
           </div>
@@ -298,22 +236,16 @@
             <div class="value">space-between</div>
             <div class="value">space-evently</div>
           </div>
-          <div class="property__code">
-            <pre rel="css">
-                  <code>
-.justify-content {
-  justify-content: space-between;
-}
-                  </code>
-                </pre>
-          </div>
           <div class="property__example">
+            <div class="property__code">
+              justify-content: space-between;
+            </div>
             <div class="wrapper">
               <div class="grid justify-content">
-                <div class="grid-item">Item 1</div>
-                <div class="grid-item">Item 2</div>
-                <div class="grid-item">Item 3</div>
-                <div class="grid-item">Item 4</div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
               </div>
             </div>
           </div>
@@ -330,22 +262,16 @@
             <div class="value">space-between</div>
             <div class="value">space-evently</div>
           </div>
-          <div class="property__code">
-            <pre rel="css">
-              <code>
-.align-content {
-  align-content: space-between;
-}
-              </code>
-            </pre>
-          </div>
           <div class="property__example">
+            <div class="property__code">
+              align-content: space-between;
+            </div>
             <div class="wrapper">
               <div class="grid align-content">
-                <div class="grid-item">Item 1</div>
-                <div class="grid-item">Item 2</div>
-                <div class="grid-item">Item 3</div>
-                <div class="grid-item">Item 4</div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
               </div>
             </div>
           </div>
